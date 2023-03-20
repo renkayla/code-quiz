@@ -15,16 +15,33 @@ WHEN the game is over
 THEN I can save my initials and score   */
 
 /* Define Variables 
-Assignment code to each section 
+Assignment code to section 
 Questions are defined in Objects
 Other variables are set */
+
+var timeLeft = document.getElementById("timer");
+
+var secondsLeft = 100;
 
 /* Functions :
 WHEN I click the start button
 THEN a timer starts and I am presented with a question
-(setInterval() Method)
-
-
+(setInterval() Method)*/
+function countdown() {
+    var timerInterval = setInterval(function() {
+        secondsLeft--;
+        timeLeft.textContent = "Time Left: " + secondsLeft + " s"; 
+         if(secondsLeft === 0) {
+            clearInterval(timerInterval);
+            sendMessage();
+         }
+    }  )
+}
+function sendMessage() {
+    timeLeft.textContent = "Out of time!"
+}
+countdown();
+/*
 WHEN I answer a question
 THEN I am presented with another question
 WHEN I answer a question incorrectly
