@@ -6,31 +6,69 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
-    <title>Coding Quiz</title>
+    <title>Timed Coding Quiz</title>
 </head>
 
 <body>
-    <header>
+    <header><!--view high score-->
+        <div class="header">
+            <div>
+                <button class=""button" id="check_score">View Highscores!</button>
+            </div>
+            <div>
+                <p id="timer">Time left: 75</p>
+            </div>   
+        </div>
 
     </header>
 
     <main>
-        <section>
-
+        <!--intro-->
+        <section class="page_intro" id="page_intro">
+            <div id="introduction">
+                <h1>
+                    Timed Coding Quiz Challenge !
+                </h1>
+                <p id="instruction">
+                    Answer these Coding questions as fast as you can! Any inccorrect responses will decrease your time by ten seconds! Good Luck!
+                </p>
+                <button class="button" id="start_button">Start!</button>
+            </div>
         </section>
 
-
+<!--questions-->
         <section>
-
+            <div>
+                <h2>Questions</h2>
+                <ul>
+                    <li>AnswerA</li>
+                    <li>AnswerB</li>
+                    <li>AnswerC</li>
+                    <li>AnswerD</li>
+                </ul>
+                <div>
+                    <div><!--control check-->
+                        <p>True or False</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
-
+<!--submission-->
         <section>
-
+            <div>
+                <h2>Your Score: </h2>
+                <p>
+                    Enter your initals for the score board!
+                </p>
+            </div>
         </section>
 
-
+<!--high scores-->
         <section>
+            <div>
+                <h2>High Scores!</h2>
+            </div>
 
         </section>
 
