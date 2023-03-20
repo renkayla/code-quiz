@@ -28,10 +28,20 @@ var answerBtnb = document.querySelector("answer_btnb");
 var answerBtnc = document.querySelector("answer_btnc");
 var answerBtnd = document.querySelector("answer_btnd");
 
-var checkLine = document.querySelector("control_check");
-var scoreBoard = document.querySelector("#page_submit");
-var finalScore = document.querySelector("# score_final");
+var controlCheck = document.querySelector("#control_check");
+var pageSubmit = document.querySelector("#page_submit");
+var scoreFinal = document.querySelector("#score_final");
 var userInitial = document.querySelector("#inital");
+
+var btnSubmit = document.querySelector("#btn_submit");
+var pageHighScore = document.querySelector("#page_highscore");
+var recordScore = document.querySelector("#record_score");
+var checkScore = document.querySelector("#check_score");
+var fin = document.querySelector("#fin");
+
+var btnBack = document.querySelector("back_btn");
+var btnClear = ducment.querySelector("#btn_clear");
+
 //Questions are defined in Objects
 var questionSource = [
     {
@@ -79,8 +89,10 @@ var questionSource = [
 //Other variables are set 
 
 var timeLeft = document.getElementById("timer");
-
+var questionNumber = 0;
 var secondsLeft = 75;
+var scoreTotal = 0;
+var questionCount = 1;
 
 /* Functions :
 WHEN I click the start button
