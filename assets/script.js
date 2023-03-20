@@ -16,7 +16,17 @@ THEN I can save my initials and score   */
 
 // Define Variables 
 //Assignment code to section 
- var startBtn =  document.querySelector("#start_button");
+var startBtn =  document.querySelector("#start_button");
+var pageIntro = docoument.querySelector("#page_intro");
+
+var pageQuestions = document.querySelector("#page_questions");
+var questionsAsk = document.querySelector("questions_ask");
+
+var reactButtons = document.querySelectorAll(".choices");
+var answerBtna = document.querySelector("answer_btna");
+var answerBtnb = document.querySelector("answer_btnb");
+var answerBtnc = document.querySelector("answer_btnc");
+var answerBtnd = document.querySelector("answer_btnd");
 
 //Questions are defined in Objects
 var questionSource = [
@@ -89,6 +99,23 @@ function countdown() {
     }, 1000);
 }
 
+function startQuiz () {
+    pageIntro.style.display = "none";
+    pageQuestions.style.display = "block";
+    questionNumber = 0 
+    countdown();
+    showQuestion(questionNumber);
+}
+
+function showQuestion (n) {
+    questionsAsk.textContent = questionSource[n].question;
+    answerBtna.textContent = questionSource[n].choices[0];   
+    answerBtnb.textContent = questionSource[n].choices[1];
+    answerBtnc.textContent = questionSource[n].choices[2];
+    answerBtnd.textContent = questionSource[n].choices[3]; 
+    questionNumber = n;
+}
+
 /*
 WHEN I answer a question
 THEN I am presented with another question
@@ -104,3 +131,7 @@ save initals and scores, store scores into local storage, and show high scores
 /* Add Event Listeners */
 
 startBtn.addEventListener("click", startQuiz);
+
+reactButtons.forEach(function(click){
+    click.addEventListener("click", checkAnswer);
+});
