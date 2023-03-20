@@ -84,7 +84,7 @@ var questionSource = [
         choices: ["a. function myFunction()", "b.function = myFunction() ", "c. function:myFunction() ", "d. myfunction(); "]
         answer: "a. function myFunction()"
     },
-]
+];
 
 //Other variables are set 
 
@@ -154,8 +154,8 @@ questionCount++;
 }
 function gameOver(){
     pageQuestions.style.display = "none";
-    scoreBoard.style.display = "block";
-    finalScore.textContent = "Your Score:" + totalScore;
+    padeSubmit.style.display = "block";
+    scoreFinal.textContent = "Your Score:" + totalScore;
     timeLeft.style.display = "none";
 }
 /*
