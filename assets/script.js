@@ -31,16 +31,19 @@ function countdown() {
     var timerInterval = setInterval(function() {
         secondsLeft--;
         timeLeft.textContent = "Time Left: " + secondsLeft + " s"; 
-         if(secondsLeft === 0) {
+
+         if(secondsLeft <= 0) {
             clearInterval(timerInterval);
-            sendMessage();
+            timeLeft.textContent = "out of time!";
+            finish.textContent = "Out of time!";
+            gameOver();
+         } else if(questionCount >= questionSource.length +1) {
+            clearInterval(timerInterval);
+            gameOver();
          }
-    }  )
+    }, 1000);
 }
-function sendMessage() {
-    timeLeft.textContent = "Out of time!"
-}
-countdown();
+
 /*
 WHEN I answer a question
 THEN I am presented with another question
