@@ -16,7 +16,7 @@ THEN I can save my initials and score   */
 
 // Define Variables 
 //Assignment code to section 
-
+ var startBtn =  document.querySelector("#start_button");
 
 //Questions are defined in Objects
 var questionSource = [
@@ -102,3 +102,5 @@ save initals and scores, store scores into local storage, and show high scores
 */
 
 /* Add Event Listeners */
+
+startBtn.addEventListener("click", startQuiz);
