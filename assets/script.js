@@ -28,6 +28,10 @@ var answerBtnb = document.querySelector("answer_btnb");
 var answerBtnc = document.querySelector("answer_btnc");
 var answerBtnd = document.querySelector("answer_btnd");
 
+var checkLine = document.querySelector("control_check");
+var scoreBoard = document.querySelector("#page_submit");
+var finalScore = document.querySelector("# score_final");
+var userInitial = document.querySelector("#inital");
 //Questions are defined in Objects
 var questionSource = [
     {
@@ -115,7 +119,33 @@ function showQuestion (n) {
     answerBtnd.textContent = questionSource[n].choices[3]; 
     questionNumber = n;
 }
-
+function checkAnswer(event) {
+    event.preventDefault();
+    controlCheck.style.display = "block";
+    setTimeout(function () {
+        controlCheck.style.display = 'none';
+    
+}, 1000);
+if (questionSource[questionNumber].answer == event.target.value) {
+    controlCheck.textContent + "correct!";
+    totalScore = totalScore + 1;
+} else {
+    secondLeft + secondsLeft - 10;
+    controlCheck.textContent = "Incorrect"
+} 
+if (questionNumber < questionSource.length -1) {
+    showQuestion(questionNumber +1);
+} else {
+    gameOver();
+}
+questionCount++;
+}
+function gameOver(){
+    pageQuestions.style.display = "none";
+    scoreBoard.style.display = "block";
+    finalScore.textContent = "Your Score:" + totalScore;
+    timeLeft.style.display = "none";
+}
 /*
 WHEN I answer a question
 THEN I am presented with another question
