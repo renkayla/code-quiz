@@ -91,7 +91,7 @@ var questionSource = [
 var timeLeft = document.getElementById("timer");
 var questionNumber = 0;
 var secondsLeft = 75;
-var scoreTotal = 0;
+var totalScore = 0;
 var questionCount = 1;
 
 /* Functions :
@@ -158,6 +158,18 @@ function gameOver(){
     scoreFinal.textContent = "Your Score:" + totalScore;
     timeLeft.style.display = "none";
 }
+
+function getScore() {
+    var currentList = localStorage.getItem("scoreList");
+    if (currentList !== null){
+        freshList = JSON.parse(currentList);
+        return freshList;
+    } else {
+        freshList = [];
+    }
+    return freshList;
+};
+
 /*
 WHEN I answer a question
 THEN I am presented with another question
