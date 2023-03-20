@@ -37,17 +37,17 @@
         </section>
 
 <!--questions-->
-        <section>
+        <section class="page_questions" id="page_questions">
             <div>
-                <h2>Questions</h2>
+                <h2 id="questions_ask">Questions</h2>
                 <ul>
-                    <li>AnswerA</li>
-                    <li>AnswerB</li>
-                    <li>AnswerC</li>
-                    <li>AnswerD</li>
+                    <li><button class="answers button" id="choice_btna" value="a">AnswerA</button></li>
+                    <li><button class="answers button" id="choice_btnb" value="b">AnswerB</button></li>
+                    <li><button class="answers button" id="choice_btnc" value="c">AnswerC</button></li>
+                    <li><button class="answers button" id="choice_btnd" value="d">AnswerD</button></li>
                 </ul>
                 <div>
-                    <div><!--control check-->
+                    <div id="control_check"><!--control check-->
                         <p>True or False</p>
                     </div>
                 </div>
@@ -55,19 +55,31 @@
         </section>
 
 <!--submission-->
-        <section>
+        <section class="page_submit" id="page_submit">
             <div>
-                <h2>Your Score: </h2>
+                <h2 id="fin"> FIN! </h2>
+                <p id="score_final">
+                    Your Score:
+                </p>
                 <p>
                     Enter your initals for the score board!
+                    <input id="initals">
+                    <button class="button" id="btn_submit">Submit</button>
                 </p>
             </div>
         </section>
 
 <!--high scores-->
-        <section>
+        <section class="page_highscore" id="page_highscore">
             <div>
                 <h2>High Scores!</h2>
+                <div id="record_score">
+                    <p> Record</p>
+                </div>
+                <div>
+                    <button class="button" id="btn_back">back</button>
+                    <button class="button" id="btn_clear">Clear Scores</button>
+                </div>
             </div>
 
         </section>
@@ -75,7 +87,7 @@
     </main>
 
     <footer>
-
+<p>made for a class assignment</p>
     </footer>
     <script src="assets/script/script.js"></script>
 </body>
