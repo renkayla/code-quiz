@@ -184,6 +184,18 @@ function renderScore () {
     }
 };
 
+function sort () {
+    var unsortedList = getScore();
+    if (getScore == null) {
+        return;
+    } else{
+        unsortedList.sort(function(a,b){
+            return b.score - a.score;
+        })
+        return unsortedList;
+ }
+};
+
 /*
 WHEN I answer a question
 THEN I am presented with another question
