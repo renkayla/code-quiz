@@ -196,11 +196,15 @@ function sort () {
  }
 };
 
-
+function addItem (n) {
+    var addedList = getScore();
+    addedList.push(n);
+    localStorage.setItem("ScoreList", JSON.stringify(addedList));
+};
 
  function saveScore () {
     var scoreItem = {
-        user; userInitial.value,
+        user: userInitial.value,
         score: totalScore
     }
     addItem(scoreItem);
