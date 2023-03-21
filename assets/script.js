@@ -17,10 +17,10 @@ THEN I can save my initials and score   */
 // Define Variables 
 //Assignment code to section 
 var startBtn =  document.querySelector("#start_button");
-var pageIntro = docoument.querySelector("#page_intro");
+var pageIntro = document.querySelector("#page_intro");
 
 var pageQuestions = document.querySelector("#page_questions");
-var questionsAsk = document.querySelector("questions_ask");
+var askQuestions = document.querySelector("questions_ask");
 
 var reactButtons = document.querySelectorAll(".choices");
 var answerBtna = document.querySelector("answer_btna");
@@ -39,8 +39,8 @@ var recordScore = document.querySelector("#record_score");
 var checkScore = document.querySelector("#check_score");
 var fin = document.querySelector("#fin");
 
-var btnBack = document.querySelector("back_btn");
-var btnClear = ducment.querySelector("#btn_clear");
+var backBtn = document.querySelector("back_btn");
+var btnClear = document.querySelector("#btn_clear");
 
 //Questions are defined in Objects
 var questionSource = [
@@ -55,33 +55,33 @@ var questionSource = [
         answer: "c. defining in block scope"
     },
     {
-        question: "What are the data types in JavaScript?"
-        choices: ["a. string, number, boolean, bignit, defined, null, symbol, object", "b. array, date, object, string, boolean, bigint, null, symbol", "c. string, number, bigint, boolean, undefined, null, symbol, object", "d. length, weight, true, false, date, let, var, const, "]
+        question: "What are the data types in JavaScript?",
+        choices: ["a. string, number, boolean, bignit, defined, null, symbol, object", "b. array, date, object, string, boolean, bigint, null, symbol", "c. string, number, bigint, boolean, undefined, null, symbol, object", "d. length, weight, true, false, date, let, var, const, "],
         answer: "c. string, number, bigint, boolean, undefined, null, symbol, object"
     },
     {
-        question: "What is the first index of an Array?"
-        choices: ["a. 1", "b. 10 ", "c. -1", "d. 0"]
+        question: "What is the first index of an Array?",
+        choices: ["a. 1", "b. 10 ", "c. -1", "d. 0"],
         answer: "d. 0"
     },
     {
-        question: "Inside which HTML element do we put the JavaScript?"
-        choices: ["a. <js>", "b. <javascript> ", "c. <script> ", "d. <scripting>"]
+        question: "Inside which HTML element do we put the JavaScript?",
+        choices: ["a. <js>", "b. <javascript> ", "c. <script> ", "d. <scripting>"],
         answer: "c. <script>"
     },
     {
-        question: "What is the correct syntax for referring to an external script called 'xxx.js'?"
-        choices: ["a. <script src='xxx.js'>", "b. <script href='xxx.js'> ", "c.  <script name='xxx.js'> ", "d. <script id='xxx.js'> "]
+        question: "What is the correct syntax for referring to an external script called 'xxx.js'?",
+        choices: ["a. <script src='xxx.js'>", "b. <script href='xxx.js'> ", "c.  <script name='xxx.js'> ", "d. <script id='xxx.js'> "],
         answer: "a. <script src='xxx.js'>"
     },
     {
-        question: "How do you write 'Hello World' in an alert box?"
-        choices: ["a. alertBox('Hello World');", "b. msgBox('Hello World'); ", "c. alert('Hello World');", "d. msg('Hello World'); "]
+        question: "How do you write 'Hello World' in an alert box?",
+        choices: ["a. alertBox('Hello World');", "b. msgBox('Hello World'); ", "c. alert('Hello World');", "d. msg('Hello World'); "],
         answer: "c. alert('Hello World');"
     },
     {
-        question: "How do you create a function in JavaScript?"
-        choices: ["a. function myFunction()", "b.function = myFunction() ", "c. function:myFunction() ", "d. myfunction(); "]
+        question: "How do you create a function in JavaScript?",
+        choices: ["a. function myFunction()", "b.function = myFunction() ", "c. function:myFunction() ", "d. myfunction(); "],
         answer: "a. function myFunction()"
     },
 ];
@@ -106,7 +106,7 @@ function countdown() {
          if(secondsLeft <= 0) {
             clearInterval(timerInterval);
             timeLeft.textContent = "out of time!";
-            finish.textContent = "Out of time!";
+            fin.textContent = "Out of time!";
             gameOver();
          } else if(questionCount >= questionSource.length +1) {
             clearInterval(timerInterval);
@@ -124,7 +124,7 @@ function startQuiz () {
 }
 
 function showQuestion (n) {
-    questionsAsk.textContent = questionSource[n].question;
+    askQuestions.textContent = questionSource[n].question;
     answerBtna.textContent = questionSource[n].choices[0];   
     answerBtnb.textContent = questionSource[n].choices[1];
     answerBtnc.textContent = questionSource[n].choices[2];
@@ -239,7 +239,7 @@ btnSubmit.addEventListener("click", function(event) {
     saveScore();
 });
 
-scoreCheck.addEventListener("click", function(event) {
+checkScore.addEventListener("click",function(event) {
     event.preventDefault();
     pageSubmit.style.display = "none";
     pageIntro.style.display = "none";
@@ -248,14 +248,14 @@ scoreCheck.addEventListener("click", function(event) {
     renderScore();
 });
 
-btnBack.addEventListener("click", function(event) {
-    event.preventDefault();
-    pageSubmit.style.display = "none";
-    pageIntro.style.display = "block";
-    pageHighScore.style.display = "none";
-    pageQuestions.style.display = "none";
-    location.reload();
-});
+/*backBtn.addEventlistener("click",function(event) {
+        event.preventDefault();
+        pageSubmit.style.display = "none";
+        pageIntro.style.display = "block";
+        pageHighScore.style.display = "none";
+        pageQuestions.style.display = "none";
+        location.reload();
+    });*/
 
 btnClear.addEventListener("click", function(event) {
     event.preventDefault();
