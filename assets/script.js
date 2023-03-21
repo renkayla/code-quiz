@@ -229,3 +229,41 @@ startBtn.addEventListener("click", startQuiz);
 reactButtons.forEach(function(click){
     click.addEventListener("click", checkAnswer);
 });
+
+btnSubmit.addEventListener("click", function(event) {
+    event.preventDefault();
+    pageSubmit.style.display = "none";
+    pageIntro.style.display = "none";
+    pageHighScore.style.display = "block";
+    pageQuestions.style.display = "none";
+    saveScore();
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+btnBack.addEventListener("click", function(event) {
+    event.preventDefault();
+    pageSubmit.style.display = "none";
+    pageIntro.style.display = "block";
+    pageHighScore.style.display = "none";
+    pageQuestions.style.display = "none";
+    location.reload();
+});
