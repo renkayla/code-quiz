@@ -142,7 +142,7 @@ if (questionSource[questionNumber].answer == event.target.value) {
     controlCheck.textContent + "correct!";
     totalScore = totalScore + 1;
 } else {
-    secondLeft + secondsLeft - 10;
+    secondsLeft + secondsLeft - 10;
     controlCheck.textContent = "Incorrect"
 } 
 if (questionNumber < questionSource.length -1) {
@@ -154,7 +154,7 @@ questionCount++;
 }
 function gameOver(){
     pageQuestions.style.display = "none";
-    padeSubmit.style.display = "block";
+    pageSubmit.style.display = "block";
     scoreFinal.textContent = "Your Score:" + totalScore;
     timeLeft.style.display = "none";
 }
@@ -239,25 +239,14 @@ btnSubmit.addEventListener("click", function(event) {
     saveScore();
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+scoreCheck.addEventListener("click", function(event) {
+    event.preventDefault();
+    pageSubmit.style.display = "none";
+    pageIntro.style.display = "none";
+    pageHighScore.style.display = "block";
+    pageQuestions.style.display = "none";
+    renderScore();
+});
 
 btnBack.addEventListener("click", function(event) {
     event.preventDefault();
@@ -266,4 +255,10 @@ btnBack.addEventListener("click", function(event) {
     pageHighScore.style.display = "none";
     pageQuestions.style.display = "none";
     location.reload();
+});
+
+btnClear.addEventListener("click", function(event) {
+    event.preventDefault();
+    localStorage.clear();
+    renderScore();
 });
