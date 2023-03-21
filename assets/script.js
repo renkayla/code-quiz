@@ -170,6 +170,20 @@ function getScore() {
     return freshList;
 };
 
+function renderScore () {
+    recordScore.innerHTML = "";
+    recordScore.style.display = "block";
+    var highScores = sort();
+    var topFive = highScores.slice(0,5);
+    for (var i = 0; i < topFive.length; i++){
+        var item = topFive[i];
+        var li = document.createElement("li");
+        li.textContent + item.user + "-" + item.score;
+        li.setAttribute("data-index", i);
+        recordScore.appendChild(li);
+    }
+};
+
 /*
 WHEN I answer a question
 THEN I am presented with another question
