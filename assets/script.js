@@ -195,7 +195,14 @@ function sort () {
         return unsortedList;
  }
 };
-
+ function saveScore () {
+    var scoreItem = {
+        user; userInitial.value,
+        score: totalScore
+    }
+    addItem(scoreItem);
+    renderScore();
+ }
 /*
 WHEN I answer a question
 THEN I am presented with another question
