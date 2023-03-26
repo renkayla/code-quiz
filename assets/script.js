@@ -20,13 +20,13 @@ var startBtn =  document.querySelector("#start_button");
 var pageIntro = document.querySelector("#page_intro");
 
 var pageQuestions = document.querySelector("#page_questions");
-var askQuestions = document.querySelector("questions_ask");
+var askQuestions = document.querySelector("#questions_ask");
 
 var reactButtons = document.querySelectorAll(".choices");
-var answerBtna = document.querySelector("answer_btna");
-var answerBtnb = document.querySelector("answer_btnb");
-var answerBtnc = document.querySelector("answer_btnc");
-var answerBtnd = document.querySelector("answer_btnd");
+var answerBtna = document.querySelector("#answer_btna");
+var answerBtnb = document.querySelector("#answer_btnb");
+var answerBtnc = document.querySelector("#answer_btnc");
+var answerBtnd = document.querySelector("#answer_btnd");
 
 var controlCheck = document.querySelector("#control_check");
 var pageSubmit = document.querySelector("#page_submit");
@@ -39,7 +39,7 @@ var recordScore = document.querySelector("#record_score");
 var checkScore = document.querySelector("#check_score");
 var fin = document.querySelector("#fin");
 
-var backBtn = document.querySelector("back_btn");
+var backBtn = document.querySelector("#back_btn");
 var btnClear = document.querySelector("#btn_clear");
 
 //Questions are defined in Objects
@@ -123,13 +123,9 @@ function startQuiz () {
     showQuestion(questionNumber);
 }
 
-function showQuestion(n) {
-    const pageQuestions = document.getElementById('page_questions');
-    const answerBtna = document.getElementById('choice_btna');
-    const answerBtnb = document.getElementById('choice_btnb');
-    const answerBtnc = document.getElementById('choice_btnc');
-    const answerBtnd = document.getElementById('choice_btnd');
-    pageQuestions.textContent = questionSource[n].question;
+
+function showQuestion (n) {
+    askQuestions.textContent = questionSource[n].question;
     answerBtna.textContent = questionSource[n].choices[0];   
     answerBtnb.textContent = questionSource[n].choices[1];
     answerBtnc.textContent = questionSource[n].choices[2];
