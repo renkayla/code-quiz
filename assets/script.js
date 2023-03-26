@@ -22,7 +22,7 @@ var pageIntro = document.querySelector("#page_intro");
 var pageQuestions = document.querySelector("#page_questions");
 var askQuestions = document.querySelector("#questions_ask");
 
-var reactButtons = document.querySelectorAll(".choices");
+var reactButtons = document.querySelectorAll(".answer");
 var answerBtna = document.querySelector("#answer_btna");
 var answerBtnb = document.querySelector("#answer_btnb");
 var answerBtnc = document.querySelector("#answer_btnc");
@@ -39,7 +39,7 @@ var recordScore = document.querySelector("#record_score");
 var checkScore = document.querySelector("#check_score");
 var fin = document.querySelector("#fin");
 
-var backBtn = document.querySelector("#back_btn");
+var bntBack = document.querySelector("#back_btn");
 var btnClear = document.querySelector("#btn_clear");
 
 //Questions are defined in Objects
@@ -252,7 +252,7 @@ checkScore.addEventListener("click",function(event) {
 
 
 
-/*backBtn.addEventlistener("click",function(event) {
+/*bntBack.addEventlistener("click",function(event) {
         event.preventDefault();
         pageSubmit.style.display = "none";
         pageIntro.style.display = "block";
