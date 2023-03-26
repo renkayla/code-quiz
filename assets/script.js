@@ -133,19 +133,20 @@ function showQuestion (n) {
     questionNumber = n;
 }
 
-function checkAnswer(event) {
+function answerCheck (event) {
     event.preventDefault();
     controlCheck.style.display = "block";
     setTimeout(function () {
         controlCheck.style.display = 'none';
     
 }, 1000);
+
 if (questionSource[questionNumber].answer == event.target.value) {
-    controlCheck.textContent + "correct!";
+    controlCheck.textContent = "correct!";
     totalScore = totalScore + 1;
 } else {
-    secondsLeft + secondsLeft - 10;
-    controlCheck.textContent = "Incorrect"
+    secondsLeft = secondsLeft - 10;
+    controlCheck.textContent = "Incorrect";
 } 
 if (questionNumber < questionSource.length -1) {
     showQuestion(questionNumber +1);
@@ -229,7 +230,7 @@ save initals and scores, store scores into local storage, and show high scores
 startBtn.addEventListener("click", startQuiz);
 
 reactButtons.forEach(function(click){
-    click.addEventListener("click", checkAnswer);
+    click.addEventListener("click", answerCheck);
 });
 
 btnSubmit.addEventListener("click", function(event) {
