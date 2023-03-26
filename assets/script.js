@@ -123,14 +123,20 @@ function startQuiz () {
     showQuestion(questionNumber);
 }
 
-function showQuestion (n) {
-    askQuestions.textContent = questionSource[n].question;
+function showQuestion(n) {
+    const pageQuestions = document.getElementById('page_questions');
+    const answerBtna = document.getElementById('choice_btna');
+    const answerBtnb = document.getElementById('choice_btnb');
+    const answerBtnc = document.getElementById('choice_btnc');
+    const answerBtnd = document.getElementById('choice_btnd');
+    pageQuestions.textContent = questionSource[n].question;
     answerBtna.textContent = questionSource[n].choices[0];   
     answerBtnb.textContent = questionSource[n].choices[1];
     answerBtnc.textContent = questionSource[n].choices[2];
     answerBtnd.textContent = questionSource[n].choices[3]; 
     questionNumber = n;
 }
+
 function checkAnswer(event) {
     event.preventDefault();
     controlCheck.style.display = "block";
@@ -247,6 +253,8 @@ checkScore.addEventListener("click",function(event) {
     pageQuestions.style.display = "none";
     renderScore();
 });
+
+
 
 /*backBtn.addEventlistener("click",function(event) {
         event.preventDefault();
