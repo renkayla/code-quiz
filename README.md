@@ -11,7 +11,7 @@ This JavaScript Code Quiz uses web APIs that features dynamically updated HTML a
 
 https://renkayla.github.io/code-quiz/
 
-
+![renkayla github io_code-quiz_](https://user-images.githubusercontent.com/116777951/228025365-53884c2f-fe2b-42cb-ac41-62e369edc6c2.png)
 
 ## User Story 
 
@@ -36,12 +36,7 @@ THEN I can save my initials and score
 
 ## Usage
 
-
-
-
 ![renkayla github io_code-quiz_ (1)](https://user-images.githubusercontent.com/116777951/228025328-dba92c45-1f26-45d5-8944-5d60e72fd4e8.png)
-![renkayla github io_code-quiz_](https://user-images.githubusercontent.com/116777951/228025365-53884c2f-fe2b-42cb-ac41-62e369edc6c2.png)
-
 
 ## Credits 
 
